@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자바스크립트 작성 위치</title>
+
+  <script src="./js/01_js_location.js" ></script>
+
+  <script>document.writeln("Hello World 4")</script>
+    <!--<script>코드를 만나면 html이 아 이게 js 파일이구나! 라고 알게됨-->
+    <!---<img....>에서 <img>는 요소이고 img 요소는 src 속성을 가짐
+      여기서 src는 script에서도 사용해 src는 전역 속성이라고도 불린다!-->
+
+    <!-- 
+      << 절대 경로와 상대 경로 >>
+      1. 절대 경로
+        : 현재 파일의 위치를 나타낼 때, root 부터 나타냄 root 부터 위에서 아래로 설명
+        ex) C:\mirim\2-4\js\01_js_location.html
+
+      2. 상대 경로
+        : 다른 사람에게 공유하거나, 배포할때는 무조건 상대 경로를 해야함
+         상대 경로는 현재 파일 위치 기준
+        
+         . : 현재 내가 속해있는 나의 폴더
+         .. : 현재 나의 폴더의 부모 폴더
+         / : 현재 나의 폴더의 자식 폴더
+
+         여러가지 확장 프로그램이 깔려 있어서 ./ 만 누르면 현재 속해있는 폴더들을 보여줌
+
+         js 파일을 호출할 때 head에서 부르는게 좋음
+
+      -->
+
+  </head>
+  
+  <body>
+    <!---
+    자바 스크립트의 작성위치
+    1. <head> <-- 3번째로 많이 사용
+    2. <body> <-- 2번째로 많이 사용
+    3. 외부 파일 삽입 <-- 가장 많이 사용 / 팀 작업 할 때, 자바스크립트를 공통 모듈로 빼서 모듈을 하나 만들어서 
+    ㅇㅇ에 관련한 자바스크립트.. ㅁㅁ에 관련한 자바스크립트.. 을 모아서 함 / 위치 무관!
+    4. 요소에 인라인 <-- 가장 덜 사용 / 요소 안에 붙여 넣음 > 요소 사이사이에 끼여있으면 협업 하기 어려움이 조금 있음
+    -->
+    <br>
+    hello world!!2!!<br />
+    2학년 4반<br />
+    
+    <script> document.write("Hello world3 ")</script>
+
+    <br>  
+    <button onclick="functionMy()">전송</button>
+    
+  </body>
+</html>

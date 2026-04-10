@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문(break,continue)</title>
+</head>
+<body>
+    <script>
+        /*
+        1. for loop
+
+        - 특징
+        - 동작 원리
+        - 실습(11_for_loop.html)
+
+        - for 과 break
+        - for 과 continue*/
+
+        /* 기본 for 
+        for (str1; str2; str3){
+            반복할 구문(조건이 참일 동안)
+        }
+         - str1 : 조건 초기화
+         - str2 : 조건의 참, 거짓 판별
+         - str3 : 증감
+
+         - 실행순서 : str1 > str2? 참 ?> 구문 > str3 > str2? 참 ?> 구문 > str3 > str2? 참 ?> 구문 > str3 >  ...
+          >>>> str은 딱! 1번만 실행 
+          */
+
+
+          // 반복 횟수를 정확히 알 때 사용하는게 좋음
+
+        let brands = ["애플","구글","아마존","마이크로소프트","메타"];
+        const size = brands.length;
+
+        for(let i=0; i<size; i++) {
+        console.log(brands[i]);
+        }
+
+          // 실습 : 자판기에서 음료를 구입하는 프로그램 작성
+
+        let inputCoin = 1000;
+        const drinkList = [
+            {name : "오렌지", price : 1000},
+            {name : "파워에이드", price : 1200},
+            {name : "커피", price : 700},
+            {name : "보리음료", price : 1200},
+            {name : "코카콜라", price : 1800}
+        ];
+
+        /* const dsize = drinkList.length;
+        let arr="";
+
+        for(let j=0; j<dsize ; j++) {   
+            if (drinkList[j].price <= 1000) {
+                arr += drinkList[j].name ;
+                arr += " ";
+            }
+        }
+        // console.log(inputCoin,"원으로 살 수 있는 음료 : ",arr);
+        console.log(`${inputCoin}원으로 살 수 있는 음료 : ${arr}`);*/
+
+
+        let sizeDrink = drinkList.length;
+        // for(let j=0; j<sizeDrink; j++) {
+        //     if(inputCoin >= drinkList[j].price) {
+        //         console.log(drinkList[j].name)
+        //     }
+        // }
+
+
+        let availableDrink = [];
+        for(let i=0; i<sizeDrink;i++){
+            let drink = drinkList[i];
+            if (inputCoin >= drink.price) {
+                availableDrink.push(drink);
+            }
+        }
+        console.log(availableDrink);
+
+        // break : 조건구문이나 반복구문을 빠져나오게 하는 명령
+        for(let i=0; i<10 ; i ++) {
+            if (i == 5){
+                break;
+            }
+            console.log(i);
+        }
+
+        //continue : 그 단계는 넘어가고 다음 step으로 
+         for(let i=0; i<10 ; i ++) {
+            if (i == 5){
+                continue;
+            }
+            console.log(i);
+        }
+
+
+
+    </script>
+</body>
+</html>

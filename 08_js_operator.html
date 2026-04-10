@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <script>
+        /*  할당연산자(산술연산자) = */
+        let x = 3
+        let y = 5
+
+        x = x + y
+        console.log(x) // 8
+
+        x = x - y
+        console.log(x) // 3 
+
+        // 시험 문제 유의! x = 8 이여서
+
+        x = x * y
+        console.log(x) // 15
+
+        x = x / y
+        console.log(x) // 3
+
+        x = x % y
+        console.log(x) // 3
+
+        x = x ** y
+        console.log(x) //제곱!!!!!! 243
+        
+        x = 2
+        y = 7
+        x = x ** y
+        console.log(x) //128
+
+        // 2.복합 할당 연산자(+= -= *= /= %=)
+        x = 2
+        y = 3
+    
+        console.log(x += y) // x = x + y 라는 의미 => 가독성 떨어지지만 x 출력하라는 이야기! // 5
+        console.log(x -= y) // 2 > x = x - y (x는 5)
+        console.log(x *= y) // 6 > x = x * y (x는 2)
+        console.log(x /= y) // 2 > x = x / y (x는 6)
+        console.log(x %= y) // 2 > x = x % y (x는 2)
+
+        // 3. 비교 연산자 : > < >= <= == != === !==
+        let a = 3
+        let b = "3"
+
+        console.log( a == b ) // true
+
+        let c = "5"
+        console.log( a + b ) //33
+        console.log( b + c ) //35
+        console.log( a + c ) //35
+
+        // 데이터타입이 달라도 값이 같으면 true => 언어의 유연성
+
+        console.log(a === b) //false <= 언어의 유언성 때문에 데이터 타입까지 확인할 수 있도록 "===" 사용하는게 좋다
+        console.log( a != b ) //false <= a,b가 데이터 타입을 무시하고 값은 똑같지 않지 > 아니, 똑같아
+        console.log( a !== b) // true
+
+        // 4. 산술 : ++ --
+        // ket point 산순 연산자의 위치에 따라 결과값이 달라진다
+
+        x = 5
+        y = x ++
+
+        console.log(y) // 5 <= 출력 후 증가
+        console.log(x) // 6 <= y에 대해서 뭔가가 된 다음에 x 값을 증가했기에 x = 6이 된다
+
+        x = 5
+        y = ++x // 드물게 사용
+        console.log(x) // 6 
+        console.log(y) // 6 <= 먼저 증가시키기 때문에 y = 6
+        console.log(x) // 6 
+
+        x = 5
+        y = x --
+
+        console.log(y) // 5 
+        console.log(x) // 4
+
+        x = 5
+        y = --x // 드물게 사용
+        console.log(x) // 4
+        console.log(y) // 4
+        console.log(x) // 4 
+
+        // 5. 단항 부정 연산자 : - 부호 바뀜
+        x = -3
+        console.log(x) // -3
+        console.log(-x) //3
+
+        // 6. 숫자화 연산자 : +
+        // ㄴ 음수를 양수로 바꿔주는 것이 아니라, 숫자가 아닌 문자나 boolean 값을 숫자화 해줌
+
+        x = "3"
+        console.log(typeof x) //string
+        y =+ x
+        console.log(typeof y) //number
+        let z = true
+        console.log(typeof z) // boolean
+        z =+ false
+        console.log(typeof z) //number
+        console.log(z) // 0
+
+        // 두 수를 입력 받으세요 (prompt)로 합을 구하는 코드
+        /* let InputNumber1 = Number(prompt("첫번째 숫자를 입력 : "));
+        let InputNumber2 = Number(prompt("두번째 숫자를 입력 : "));
+
+        console.log("두수의 합 :", InputNumber1 + InputNumber2);*/
+
+
+
+
+        /* 산술연산자 
+            1) 단항 연산자 : +(숫자화) -(부호바꾸기) ++ -- !
+            2) 다항 연산자 : + - * / % ** */ 
+
+        // 7. 논리 연산자 : 조건을 여러가지 만족시키는지 알아보는 연산자
+        // &&(둘 다 만족해야 true) ||(둘 중 하나라도 만족하면 true)
+
+
+        let o = true && false // flase <= 둘 다 참일 수 없음 > 두개 다 일치 X > 거짓
+        console.log(o) //flase
+        o = 3 > 2 && 4 > 7 // flase <= 왼쪽 항 참, 오른쪽 항 거짓 > 두개 다 일치 X > 거짓
+        console.log(o) //flase
+        o = 3 < 2 || 4 < 7 // true <= 왼쪽 항 거짓, 오른쪽 항 참 > 참
+        console.log(o) // true
+        o = 3 > 4 || 4 < 2 || 2 > 1 // true <= 왼쪽 항 거짓, 중간 항 거짓, 오른쪽 항 참 > 참
+        console.log(o) //true
+        
+
+        //  8. 문자열 연산자 : +
+        let firstName = "Jhon"
+        let lastName = "Bacon"
+        let fullName = firstName + lastName
+        console.log(fullName) //JhonBacon
+
+        // 9. (조건)삼항연산자 : 조건 ? 참 : 거짓 
+        // let age = 1                         
+        // console.log(age >= 17 ? "성인" : "어린이") // 어린이
+        // age = 20
+        // console.log(age >= 17 ? "성인" : "어린이") // 성인
+
+        let age = 16
+        let isAdult = age>=20 ? "성인" : "어린이";
+        console.log(isAdult)
+
+        //90점 이상이면 "A", 80점 이상이면 "B", 70점 이상이면 "C", 그 이하이면 "E"
+        let score = prompt("점수를 입력해주세요")
+        let isScore = (score >= 90 ? "A" : (score > 80) ? "B" : (score > 70) ? "B": (score > 70) ? "C" : "E")   
+        console.log("등급 : ",isScore)
+    </script>
+</body>
+</html>

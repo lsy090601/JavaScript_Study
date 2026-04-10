@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 연산자</title>
+</head>
+<body>
+    <script>
+        //나이에 따른 버스 요금 계산
+        /* 6세 이하 무료 : 
+        12세 미만 :  450 
+        18세 미만 : 700
+        18세 이상 : 1000
+        70세 이상 : 무료 (노인)
+        조건 효율성, 사용자 편의, 가독성..
+        나이는 prompt로 입력 받음 */
+
+        /* 
+        
+        if (age >= 18) {//미성년자 아님
+            if (age >= 70) {
+                console.log("요금은 무료입니다!");
+            } //노인
+            else {
+                console.log("요금은 1000원입니다!");
+            } //노인이 아닌 성인
+        }
+        else{//미성년자임
+            if (age < 12) {
+                if(age < 6) {
+                    console.log("요금은 무료입니다");
+                }//6세 미만
+                else{
+                    console.log("요금은 450원입니다");
+                }//12세 미만
+            }
+            else{
+                console.log("요금은 700원입니다");//18세 미만
+            }
+        }*/ //버전 1
+
+        /* if(age < 70){
+            if(age < 18){
+                if(age < 6){
+                    console.log("요금은 무료입니다")
+                }
+                else if(age < 12) {
+                    console.log("요금은 450원입니다")
+                }
+                else{
+                    console.log("요금은 700원입니다")
+                }
+            }
+            else{
+                console.log("요금은 1000원입니다")
+            }
+        }
+        else{
+            console.log("요금은 무료입니다")
+        }*/ //버전 2
+
+
+        /* if (age >= 70) {
+            console.log("요금은 무료입니다!");
+        } else if (age >= 18) {
+            console.log("요금은 1000원입니다!");
+        } else if (age < 6) {
+            console.log("요금은 무료입니다");
+        } else if (age < 12) {
+            console.log("요금은 450원입니다");
+        } else {
+            console.log("요금은 700원입니다");
+        }*/
+
+        // let age = +prompt("나이를 입력해주세요 : ");
+        // let busFare = 0;
+
+        // if ((age > 0 && age <= 6) || age >= 70) {
+        //     busFare = 0;
+        // } else if (age < 12) {
+        //     busFare = 450;
+        // } else if (age < 18) {
+        //     busFare = 700;
+        // } else if (age >= 18) {
+        //     busFare = 1000;
+        // } else {
+        //     console.log("나이를 입력하지 않았습니다. 나이를 입력하세요.");
+        //     busFare = "error";
+        // }
+        // if (busFare !== "error"){
+        //     console.log("요금은", busFare, "원입니다.");
+        // }      
+
+        let age = +prompt("나이를 입력해주세요 : ");
+        let busFare = 0;
+
+        if(age) {
+            if ((age > 0 && age <= 6) || age >= 70) {
+            busFare = 0;
+            } else if (age < 12) {
+                busFare = 450;
+            } else if (age < 18) {
+                busFare = 700;
+            } else if (age >= 18) {
+                busFare = 1000;
+            } 
+             console.log("요금은", busFare, "원입니다.");
+        } else {
+            console.log("나이를 입력하지 않았습니다. 나이를 입력하세요.");
+        }
+
+        let x;
+        if (x) {
+            console.log("if 실행");
+        }else {
+            console.log("else 실행");
+        }
+        // x는 할당을 하지않았기에 undifind로 나타나 else가 뜸. 
+        // 거짓으로 보는 건 : undifinde, flase, null, Nan, 0, ""
+    </script>
+</body>
+</html>

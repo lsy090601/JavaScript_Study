@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문</title>
+</head>
+<body>
+    <script>
+        //switch : 상수값을 비교한다
+        // Date() : 객체 : 날짜와 시간을 다룸
+        let now = new Date(); //now는 Date() 객체를 통해서 생성한 인스턴스 객체
+        //console.log(now)
+        let m = now.getDay(); //요일 //일요일= 0 \\ 0,1,2,3,4,5,6 (일,월,화,수,목,금,토)
+        //console.log(m)
+
+
+
+        //요일을 출력하는 switch 구문 코드 작성
+
+        let day = new Date();
+        let day_m = day.getDay();
+        let mlist = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+        console.log(mlist[day_m]);
+        switch(day_m) {
+            case 0 : console.log("월요일") ; break;
+            case 1 : console.log("화요일") ; break;
+            case 3 : console.log("수요일") ; break;
+            case 4 : console.log("목요일") ; break;
+            case 5 : console.log("금요일") ; break;
+            case 6 : console.log("토요일") ; break;
+            default : console.log("일요일") ; 
+        }
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 변수형</title>
+</head>
+<body>
+    <script>
+        /* 변수 선언 : var( 전역변수=> 누구나 접근 가능, 내가 분명히 함수 안에서만 변경했는데 막 다 바뀌는 경우가 있을 수도 있음)
+        1. var
+            - Es6 이전부터 있었음
+            - 재선언 (동일한 이름으로) 가능, 재할당 가능
+            - 전역변수로 사용 가능
+            - 덮어쓰기가 가능해서 > 오류의 가능성을 늘 가지고 있음 > 항상 조심조심해서 사용! */
+
+        var name = "2학년 4반"
+        console.log(name)
+
+        var x = 5;
+        var y = 7;
+        var z = x + y;
+        console.log("z1 : ",z)
+
+        x = 9 //재할당
+        z = x+y
+        console.log("z2 : ",z)
+
+        var x = 12;
+        var y = 17;
+        var z = x-y;
+
+        console.log("z3 : ",z)
+
+
+
+        /* 
+        2. let
+            - Es6 이후에 등장
+            - 재선언 불가 > 프로그램 안에서 동일한 변수명 사용 불가능 > 협업 때는 let을 권장함!
+            - 재할당 가능 */
+        let x1 = 8;
+        let y1 = 10 ;
+        let z1 = x1+ y1;
+
+        console.log("lz1 : ",z1);
+
+        // 재선언 불가
+        // let x1 = 6;
+        //Identifier 'x1' has already been declared (at 03_js_declaration.html:48:13)
+
+        x1 = 13;
+        y1 = 10;
+        z1 = x1 - y1;
+        console.log("lz2 : ",z1)
+
+        /* 
+        3. const
+            - Es6 이후에 등장
+            - 상속값(변하지 않는)
+            - 가급적 대문자로 선언(자바와 같음)
+            - 상수니 >  재할당, 재선언 불가!
+            - 협업 => 팀 => 포맷 지정시 활용
+
+            ex ) 사이트에서 날짜 선언 방법...  yyyy-mm-dd, dd-mm-yy 같은 경우 */x
+        
+        const PI = 3.14;
+        console.log(PI);
+        // 재할당 불가
+        // PI = 3;
+        //Assignment to constant variable. at 03_js_declaration.html:69:12
+
+
+    </script>
+</body>
+</html>
